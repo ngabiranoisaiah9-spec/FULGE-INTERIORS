@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Fulge Interiors | Bespoke Interior Design Mbarara, Uganda</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e1e1e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, .logo, .nav-links a, .btn, .section-title {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #2c2c2c;
+            text-decoration: none;
+        }
+        .logo span {
+            color: #b77b4b;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #2c2c2c;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #b77b4b;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #2c2c2c;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background: #b77b4b;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            transition: 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #b77b4b;
+            color: #b77b4b;
+        }
+        .btn-outline:hover {
+            background: #b77b4b;
+            color: white;
+        }
+        .btn:hover {
+            background: #9b623a;
+            transform: translateY(-2px);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #faf6f0 0%, #f2ebe2 100%);
+            padding: 80px 0 90px;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c2c2c;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .hero-image {
+            flex: 1;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* SECTION GENERAL */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #1e1e1e;
+        }
+        .section-sub {
+            text-align: center;
+            color: #6c6c6c;
+            max-width: 650px;
+            margin: 0 auto 48px;
+            font-size: 1rem;
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            transition: all 0.3s;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+            border-color: #e2dcd5;
+        }
+        .service-icon {
+            font-size: 2.8rem;
+            color: #b77b4b;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            color: #5a5a5a;
+            font-size: 0.95rem;
+        }
+
+        /* PORTFOLIO GALLERY */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+        .portfolio-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            width: 100%;
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: 0.3s;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        .portfolio-overlay h4 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        /* ABOUT SECTION */
+        .about-content {
+            display: flex;
+            gap: 56px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        .about-text p {
+            margin-bottom: 18px;
+            color: #3a3a3a;
+        }
+        .about-image {
+            flex: 1;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .signature {
+            margin-top: 20px;
+            font-style: italic;
+            color: #b77b4b;
+            font-weight: 500;
+        }
+
+        /* CONTACT FORM + MAP */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            background: #fefaf5;
+            border-radius: 40px;
+            padding: 48px;
+            margin-top: 20px;
+        }
+        .contact-form {
+            flex: 1.2;
+        }
+        .contact-info {
+            flex: 0.8;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e2dcd5;
+            border-radius: 28px;
+            font-family: 'Inter', sans-serif;
+            background: white;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #b77b4b;
+            box-shadow: 0 0 0 2px rgba(183,123,75,0.2);
+        }
+        .contact-info h4 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        .info-item i {
+            font-size: 1.5rem;
+            color: #b77b4b;
+            width: 32px;
+        }
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            gap: 20px;
+        }
+        .social-links a {
+            color: #5a5a5a;
+            font-size: 1.4rem;
+            transition: 0.2s;
+        }
+        .social-links a:hover {
+            color: #b77b4b;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #111111;
+            color: #dddddd;
+            padding: 48px 0 24px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col p {
+            max-width: 260px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #bbbbbb;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer-col ul li a:hover {
+            color: #b77b4b;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 28px;
+            border-top: 1px solid #2a2a2a;
+            font-size: 0.8rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .navbar {
+                flex-wrap: wrap;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background: white;
+                padding: 20px 0;
+                gap: 1rem;
+                text-align: center;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .contact-wrapper {
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 20px;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="#" class="logo">FULGE<span> interiors</span></a>
+        <div class="menu-icon" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <!-- HOME section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Elevating spaces in <br> the heart of Mbarara.</h1>
+                <p>Fulge Interiors brings world-class design to Uganda. We craft bespoke interiors that blend contemporary elegance with local warmth.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Start a Project</a>
+                    <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Elegant living room interior Mbarara">
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT section - Ugandan names & Mbarara context -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Design with a Ugandan Soul</h3>
+                    <p>Founded by <strong>Nakato Aisha</strong> and <strong>Mugisha Derrick</strong>, Fulge Interiors is Mbarara's premier interior design studio. With over a decade of experience transforming homes and businesses across Western Uganda, we fuse global trends with local craftsmanship.</p>
+                    <p>Our approach is deeply collaborative — we listen, interpret, and translate your dreams into cohesive design narratives. From cozy residences in Katete to boutique hotels along Mbarara-Kabale road, every Fulge space echoes sophistication and warmth.</p>
+                    <div class="signature">— Nakato Aisha, Creative Director & Lead Designer</div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fulge Interiors design team in Mbarara studio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Signature Services</h2>
+            <p class="section-sub">Tailored design solutions that blend luxury, practicality, and your unique vision — right here in Mbarara.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Residential Design</h3>
+                    <p>Full home styling, space planning, and furniture curation for apartments, bungalows & villas across Mbarara.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Interiors</h3>
+                    <p>Offices, boutiques, restaurants and hospitality spaces designed to inspire productivity and brand identity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Concept & Styling</h3>
+                    <p>Mood boards, color consultancy, and art curation for cohesive modern aesthetics.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-couch"></i></div>
+                    <h3>Custom Furniture</h3>
+                    <p>Bespoke joinery, built-ins, and limited-edition pieces crafted by local artisans in Uganda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO section - using real high-quality images from the internet -->
+    <section id="portfolio" style="background-color: #fefaf8;">
+        <div class="container">
+            <h2 class="section-title">Our Recent Works</h2>
+            <p class="section-sub">A glance at our design language — warm minimalism, organic textures, and timeless character across Mbarara and beyond.</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/1571459/pexels-photo-1571459.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern living area Mbarara">
+                    <div class="portfolio-overlay"><h4>Nakayiza Residence</h4><span>Modern Contemporary - Katete</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/2251247/pexels-photo-2251247.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Luxury dining room design">
+                    <div class="portfolio-overlay"><h4>Lake View Boutique Hotel</h4><span>Neo-Classic - Mbarara</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Home office design">
+                    <div class="portfolio-overlay"><h4>Kakoba Executive Office</h4><span>Scandinavian Minimalism</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bedroom interior design">
+                    <div class="portfolio-overlay"><h4>Mugisha Private Suite</h4><span>Organic Modern</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/262367/pexels-photo-262367.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hotel lobby design">
+                    <div class="portfolio-overlay"><h4>Agip Lobby Renovation</h4><span>Art Deco Revival</span></div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Modern kitchen design">
+                    <div class="portfolio-overlay"><h4>Ninsiima Kitchen Studio</h4><span>Warm Industrial</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT section with Mbarara location -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Create Together</h2>
+            <p class="section-sub">Tell us about your vision — we'll bring it to life. Reach out for a consultation at our Mbarara studio.</p>
+            <div class="contact-wrapper">
+                <div class="contact-form">
+                    <form id="contactForm" action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full Name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option>Interested in: Residential Design</option>
+                                <option>Commercial Interiors</option>
+                                <option>Concept & Styling</option>
+                                <option>Custom Furniture</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="4" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                        <p id="formFeedback" style="margin-top: 15px; font-size: 0.85rem;"></p>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h4>Get in touch</h4>
+                    <div class="info-item"><i class="fas fa-map-marker-alt"></i> <span>Plot 24, High Street, Mbarara, Uganda</span></div>
+                    <div class="info-item"><i class="fas fa-phone-alt"></i> <span>+256 772 345 678</span></div>
+                    <div class="info-item"><i class="fas fa-envelope"></i> <span>hello@fulgeinteriors.ug</span></div>
+                    <div class="info-item"><i class="fas fa-clock"></i> <span>Mon - Fri: 9AM – 6PM | Saturday: 10AM – 2PM</span></div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3 style="font-family: 'Playfair Display'; color:white;">FULGE interiors</h3>
+                <p>Where design meets soul. Creating authentic, bespoke interiors in Mbarara and across Uganda.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="font-size:0.85rem;">Subscribe for design inspiration & updates.</p>
+                <div style="display: flex; gap: 8px; margin-top: 12px;">
+                    <input type="email" placeholder="Your email" style="background:#222; border-color:#444; border-radius:40px; color:white;">
+                    <button style="background:#b77b4b; border:none; border-radius:40px; padding:0 16px; color:white;">→</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Fulge Interiors — Crafting distinctive spaces in Mbarara, Uganda. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Active link highlight on scroll & close mobile menu after click
+    const sections = document.querySelectorAll('section');
+    const navItems = document.querySelectorAll('.nav-link');
+
+    function updateActiveSection() {
+        let current = '';
+        const scrollPos = window.scrollY + 150;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    window.addEventListener('scroll', updateActiveSection);
+    window.addEventListener('load', updateActiveSection);
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link, .logo, .btn[href^="#"], .footer-col a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if(targetId && targetId !== "#" && targetId.startsWith('#')) {
+                e.preventDefault();
+                const targetElem = document.querySelector(targetId);
+                if(targetElem) {
+                    targetElem.scrollIntoView({ behavior: 'smooth' });
+                    if(navLinks.classList.contains('active')) navLinks.classList.remove('active');
+                }
+            } else if(targetId === "#") {
+                if(window.location.pathname === "/" || targetId === "#") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // Simple contact form feedback
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('formFeedback');
+            feedback.innerHTML = '<span style="color:#b77b4b;">✓ Thank you! Our Mbarara team will reach out within 24 hours.</span>';
+            contactForm.reset();
+            setTimeout(() => { feedback.innerHTML = ''; }, 4000);
+        });
+    }
+</script>
+</body>
+</html>
+```
